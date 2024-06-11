@@ -1,12 +1,16 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+// ADD A GLOBAL SCOPE ARRAY FOR EMPLOYEE NAMES
+const employeesArray = ["Jeri Gulsby", "Joe Hills", "Shana Smith"];
+
 // Collect employee data
 const collectEmployees = function() {
+  return employeesArray;
   // TODO: Get user input to create and return an array of employee objects
 }
 
-// Display the average salary
+// Display the aveit srage salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
 }
