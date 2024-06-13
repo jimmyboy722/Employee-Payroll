@@ -1,16 +1,25 @@
-// Get a reference to the #add-employees-btn element
-const addEmployeesBtn = document.querySelector('#add-employees-btn');
-
 // ADD A GLOBAL SCOPE ARRAY FOR EMPLOYEE NAMES
 const employeesArray = ["Jeri Gulsby", "Joe Hills", "Shana Smith"];
 
+// Get a reference to the #add-employees-btn element
+const addEmployeesBtn = document.querySelector('#add-employees-btn');
+
+
+addEmployeesBtn.addEventListener('click', () => {
+  
+  let firstName = window.prompt ( 'Enter First Name' );
+  let lastName = window.prompt ( 'Enter Last Name' );
+  let salary = window.prompt ( 'Enter Salary' )
+})
+
 // Collect employee data
 const collectEmployees = function() {
+  employeesArray
   return employeesArray;
   // TODO: Get user input to create and return an array of employee objects
 }
-
-// Display the aveit srage salary
+// how can i make the clicking of a button  present the user with a series of prompts asking for first name, last name and salary
+// Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
 }
