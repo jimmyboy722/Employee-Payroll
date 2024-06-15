@@ -1,33 +1,24 @@
 // Get a reference to the #add-employees-btn element
-const addEmployeesBtn = document.getElementById( '#add-employees-btn');
+document.getElementById( "add-employees-btn").addEventListener( "click", addEmployee);
 
   // Collect employee data
-  addEmployeesBtn.addEventListener('CLICK') => {
-    employeesArray;
-
-    let addEmployee = true;
-
-    while (addEmployee) {
-      let firstName = window.prompt ( 'Enter First Name' );
-      let lastName = window.prompt ( 'Enter Last Name' );
-      let salary = window.prompt ( 'Enter Salary' );
+function addEmployee() {
+  let firstName = prompt("Enter the first name:");
+  let lastName = prompt("Enter the last name:");
+  let salary = prompt( "Enter the Salary")
+  
+// Using parseFloat for salary in object below to include decimals and convert strings to numbers
+  let employee = {
+    firstName: firstName,
+    lastName: lastName,
+    salary: parseFloat(salary)
+  };
+}
 
       //TO CHECK IF A SALARY IS A VALID NUMBER, AND IF NOT, RESULT IN $0
-      if (isNaN(salary)){
-        salary = 0
-      }else{
-        salary = Number(salary);
-      }
 
-      employeesArray.push({
-        firstName: firstName,
-        lastName: lastName,
-        salary: parseFloat(salary)
-      });
-  return employeesArray;
   // TODO: Get user input to create and return an array of employee objects
-}
-  }
+
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
