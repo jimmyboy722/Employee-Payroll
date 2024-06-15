@@ -1,24 +1,33 @@
-// ADD A GLOBAL SCOPE ARRAY FOR EMPLOYEE NAMES
-const employeesArray = ["Jeri Gulsby", "Joe Hills", "Shana Smith"];
-
 // Get a reference to the #add-employees-btn element
-const addEmployeesBtn = document.querySelector('#add-employees-btn');
+const addEmployeesBtn = document.getElementById( '#add-employees-btn');
 
+  // Collect employee data
+  addEmployeesBtn.addEventListener('CLICK') => {
+    employeesArray;
 
-addEmployeesBtn.addEventListener('click', () => {
-  
-  let firstName = window.prompt ( 'Enter First Name' );
-  let lastName = window.prompt ( 'Enter Last Name' );
-  let salary = window.prompt ( 'Enter Salary' )
-})
+    let addEmployee = true;
 
-// Collect employee data
-const collectEmployees = function() {
-  employeesArray
+    while (addEmployee) {
+      let firstName = window.prompt ( 'Enter First Name' );
+      let lastName = window.prompt ( 'Enter Last Name' );
+      let salary = window.prompt ( 'Enter Salary' );
+
+      //TO CHECK IF A SALARY IS A VALID NUMBER, AND IF NOT, RESULT IN $0
+      if (isNaN(salary)){
+        salary = 0
+      }else{
+        salary = Number(salary);
+      }
+
+      employeesArray.push({
+        firstName: firstName,
+        lastName: lastName,
+        salary: parseFloat(salary)
+      });
   return employeesArray;
   // TODO: Get user input to create and return an array of employee objects
 }
-// how can i make the clicking of a button  present the user with a series of prompts asking for first name, last name and salary
+  }
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
