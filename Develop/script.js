@@ -1,14 +1,21 @@
 // Get a reference to the #add-employees-btn element
-document.getElementById( "add-employees-btn").addEventListener( "click", addEmployee);
+const addEmployeesBtn = document.getElementById( "add-employees-btn").addEventListener( "click", addEmployees);
 
   // Collect employee data
-function addEmployee() {
+function addEmployees() {
+// An array for employee info
+  let employees = []
   let continueAdding = true;
 
   while(continueAdding) {
   let firstName = prompt("Enter the first name:");
   let lastName = prompt("Enter the last name:");
-  let salary = prompt( "Enter the Salary")
+  let salary = prompt( "Enter the Salary");
+
+  //TO CHECK IF A SALARY IS A VALID NUMBER, AND IF NOT, RESULT IN $0
+  if (isNaN(salary)) {
+  salary = 0
+  }
 
 // Using parseFloat for salary in object below to include decimals and convert strings to numbers
   let employee = {
@@ -17,39 +24,61 @@ function addEmployee() {
     salary: parseFloat(salary)
   };
 
-  //Adding the employee to a list
-  employees.push(employee);
+//Adding the employee to a list
+employees.push(employee);
 
 console.log("Employee Added", employee);
 
 //Asking if user would like to continue
 //Used toLowerCase string method to ensure response to adding another employee is correctly formatted
-let continueResponse = prompt( "Do you want to add another employee? (yes/no)").toLowerCase();
+let continueResponse = prompt( "Do you want to add another employee? (yes/no)");
 if (continueResponse !== "yes") {
   continueAdding = false;
 }
+}
+
+//Used sort method to sort names alphabetically and localCompare method to compare the names
+employees.sort((a, b) => a.lastName.localeCompare(b.lastName));
+// TODO: Get user input to create and return an array of employee objects
 return employees;
 }
+
+// Calculating and displaying the average salary
+function displayAverageSalary(employees) {
+  if (employees.length === 0) {
+    console.log( "No Employees Added.");
+    return;
+  }
+  //Used reduce method to calculate the total salary with accumulator callback and emp values
+  let totalSalary = employees.reduce ((acc, emp) =>
+    acc + emp.salary, 0);
+  
+  let averageSalary = totalSalary / employees.length;
+  
+  console.log( "Average salary of employees:", averageSalary);
 }
 
-//Array for employee info
-const employees = []
+let allEmployees = addEmployees();
+console.log("All Employees", allEmployees);
 
-  //TO CHECK IF A SALARY IS A VALID NUMBER, AND IF NOT, RESULT IN $0
-if (isNaN(salary)) {
-  salary = 0
-}
-  // TODO: Get user input to create and return an array of employee objects
+displayAverageSalary(allEmployees);
 
-// Display the average salary
-const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+
+// Picks random index by using Math.random multiplied by employees,length
+//math.floor rounds down to nearest integer
+const getRandomEmployee = function(employees) {
+if (employees.length === 0) {
+  console.log( "No employees to select from.");
+  return null;
 }
 
-// Select a random employee
-const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+let randomIndex = Math.floor(Math.random() * employees.length);
+
+return employees[randomIndex];
 }
+
+let randomEmployee = getRandomEmployee(allEmployees);
+console.log( "Randomly chosen employee:", randomEmployee);
 
 /*
   ====================
