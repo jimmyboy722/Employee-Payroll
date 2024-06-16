@@ -3,20 +3,42 @@ document.getElementById( "add-employees-btn").addEventListener( "click", addEmpl
 
   // Collect employee data
 function addEmployee() {
+  let continueAdding = true;
+
+  while(continueAdding) {
   let firstName = prompt("Enter the first name:");
   let lastName = prompt("Enter the last name:");
   let salary = prompt( "Enter the Salary")
-  
+
 // Using parseFloat for salary in object below to include decimals and convert strings to numbers
   let employee = {
     firstName: firstName,
     lastName: lastName,
     salary: parseFloat(salary)
   };
+
+  //Adding the employee to a list
+  employees.push(employee);
+
+console.log("Employee Added", employee);
+
+//Asking if user would like to continue
+//Used toLowerCase string method to ensure response to adding another employee is correctly formatted
+let continueResponse = prompt( "Do you want to add another employee? (yes/no)").toLowerCase();
+if (continueResponse !== "yes") {
+  continueAdding = false;
+}
+return employees;
+}
 }
 
-      //TO CHECK IF A SALARY IS A VALID NUMBER, AND IF NOT, RESULT IN $0
+//Array for employee info
+const employees = []
 
+  //TO CHECK IF A SALARY IS A VALID NUMBER, AND IF NOT, RESULT IN $0
+if (isNaN(salary)) {
+  salary = 0
+}
   // TODO: Get user input to create and return an array of employee objects
 
 // Display the average salary
