@@ -30,7 +30,6 @@ function addEmployees() {
     console.log("Employee Added", employee);
 
     //Asking if user would like to continue
-    //Used toLowerCase string method to ensure response to adding another employee is correctly formatted
     let continueResponse = confirm("Do you want to add another employee?");
     if (!continueResponse) {
       continueAdding = false;
@@ -57,11 +56,6 @@ function displayAverageSalary(employees) {
   console.log("Average salary of employees:", averageSalary);
 }
 
-// let allEmployees = addEmployees();
-// console.log("All Employees", allEmployees);
-
-// displayAverageSalary(allEmployees);
-
 // Picks random index by using Math.random multiplied by employees,length
 //math.floor rounds down to nearest integer
 const getRandomEmployee = function (employees) {
@@ -74,9 +68,6 @@ const getRandomEmployee = function (employees) {
 
   return employees[randomIndex];
 };
-
-// let randomEmployee = getRandomEmployee(allEmployees);
-// console.log("Randomly chosen employee:", randomEmployee);
 
 /*
   ====================
