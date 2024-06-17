@@ -31,4 +31,4 @@ This app was created with the ability to perform the following tasks:
  <img width="960" alt="200-javascript-homework-console-demo" src="https://github.com/jimmyboy722/Employee-Payroll/assets/169507618/fb645f3f-c97a-4c56-8a9f-d4170853e491">
 
  ### The following is a link to this deployed app
- 
+ https://jimmyboy722.github.io/Employee-Payroll/
