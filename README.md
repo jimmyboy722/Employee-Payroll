@@ -27,3 +27,5 @@ This app was created with the ability to perform the following tasks:
 - Reduce method
 - Math.random static method
 - Return statements
+
+- <img width="960" alt="200-javascript-homework-console-demo" src="https://github.com/jimmyboy722/Employee-Payroll/assets/169507618/fb645f3f-c97a-4c56-8a9f-d4170853e491">
